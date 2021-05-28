@@ -1,10 +1,10 @@
 # REGRAD Dataset
 
-![REGRAD](./REGRAD.png)  
+![REGRAD](REGRAD.png)  
 This is a detailed decription of REGRAD Dataset.  
 The Dataset can be divided into two parts, *Relation Part*  and  *Grasp Part*. Each part contains five folder, 
 *train/test/seen_valid/unseen_valid/seen_test*. For every folder, the data format is the same.  
-![dataset split](https://github.com/poisonwine/REGRAD/blob/master/model%20split.png) 
+![datasett](model.png) 
 
 ## Relation Part
 The directory structure is as follows. Take *train* folder for example.  
