@@ -4,7 +4,7 @@
 This is a detailed decription of REGRAD Dataset.  
 The Dataset can be divided into two parts, *Relation Part*  and  *Grasp Part*. Each part contains five folder, 
 *train/test/seen_valid/unseen_valid/seen_test*. For every folder, the data format is the same.  
-![datasett](model.png) 
+![dataset_split](dataset_split.png) 
 
 ## Relation Part
 The directory structure is as follows. Take *train* folder for example.  
@@ -22,7 +22,7 @@ train
 |__________ final_state.json
 |__________ mrt.json
 ```
-#### Some detailed description
+### Some detailed description
 
 - [x] *final_state.json*  
     contains the  generated scene information including *model name*、*obj_id*、*path*、*position*. This file is necessary to
