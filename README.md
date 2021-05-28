@@ -46,27 +46,27 @@ train
     contains all models information,it is a list of dictionaries. Every
     dictionary contains all information of a model.Dict keys are as follows.  
     ```angular2
-    { 'model_name': ShapeNet model name(e.g. tower),
+    { 'model_name':(str) ShapeNet model name(e.g. tower),
   
-      'category': ShapeNet category(e.g. 04460130),
+      'category':(str) ShapeNet category(e.g. 04460130),
   
-      'model_id': e.g. de08da18d316f927a72fcffccc240663(ShapeNet model id),
+      'model_id':(str) ShapeNet model id(e.g. de08da18d316f927a72fcffccc240663),
   
-      'obj_id': id in the scene(e.g. 1),
+      'obj_id': (int) id in the scene(e.g. 1),
   
-      '6D_pose': xyz position and quaternion,7 dimensions
+      '6D_pose':(7-d list of float) 6D_pose of models, format [x,y,z, quaternion],
   
-      'parent_list': parent obj_id list,
+      'parent_list':(list) parent obj_id list, format ['model_name-obj_id1','model_name-obj_id2'],
   
-      'scale': model scale factor in the scene,
+      'scale':(3-d list) model scale factor in the scene, format [x_scale, y_scale, z_scale],
   
-      'bbox': bounding box of the model,
+      'bbox':(4-d list) bounding box of the model, format [x1, y1, x2, y2],
   
-      'MinAreaRect': The smallest bounding rectangle of the model,
+      'MinAreaRect':(4-d list) The smallest bounding rectangle of the model, format [x1, y1, x2, y2],
   
-      'segmentation': segmentation region in the segment.jpg picture,
+      'segmentation':(2-d list) segmentation region in the segment.jpg picture, format [x_position_list, y_position_list],
   
-      'Source': ShapeNetCore.v2,
+      'Source': (str) ShapeNetCore.v2,
   }
   ```
 - [x] *segment.jpg*  
@@ -79,7 +79,7 @@ train
 - [x] *depth.png*  
 
 
-##Grasp_Part  
+## Grasp_Part  
 As for grasping, the dataset provides both 2D and 3D grasping data. For each scene, there are 9 data files
 corresponding to 9 camera angles.  
 1. data loading
