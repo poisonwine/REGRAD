@@ -62,7 +62,7 @@ train
   
       'bbox':(4-d list) bounding box of the model, format [x1, y1, x2, y2],
   
-      'MinAreaRect':(4-d list) The smallest bounding rectangle of the model, format [x1, y1, x2, y2],
+      'MinAreaRect':(4-d list) The smallest bounding rectangle of the model, format [[x1,y1],[x2,y2],[x3,y3],[x4,y4]],
   
       'segmentation':(2-d list) segmentation region in the segment.jpg picture, format [x_position_list, y_position_list],
   
