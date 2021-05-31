@@ -90,40 +90,55 @@ corresponding to 9 camera angles.
 2. data format
 ```angular2
 {
-    'antipodal_score'([selected_point_num, 4,9]): The force closure property of a grasp,
- 
-    'vertical_score'([selected_point_num, 4,9]): The verticality between the grasping direction of the gripper and the table (It is more stable to perform grasping perpendicular to the desktop)
-
-    'center_score'([selected_point_num, 4,9]): The distance between the grasp point and the center point of the object (It is more stable to perform grasping near its center)
+    'antipodal_score'  (ndarray([valid_frame_num, len(LENGTH_SEARCH),GRASP_PER_LENGTH])): The force closure property of a grasp 
     
-    'objects_label'([selected_point_num, 4,9]): The object label corresponding to the point of the effective grasping part
+    'vertical_score'  (ndarray([valid_frame_num, len(LENGTH_SEARCH),GRASP_PER_LENGTH])): The verticality between the grasping direction of the gripper and the table (It is more stable to perform grasping perpendicular to the desktop)
     
-    'view_cloud'([view_point_num, 3]): Point cloud from the camera's perspective
+    'center_score'  (ndarray([valid_frame_num, len(LENGTH_SEARCH),GRASP_PER_LENGTH])): The distance between the grasp point and the center point of the object (It is more stable to perform grasping near its center)
     
-    'view_cloud_color'([view_point_num, 3]): Point cloud' color from the camera's perspective
+    'objects_label'  (ndarray([valid_frame_num, len(LENGTH_SEARCH),GRASP_PER_LENGTH])): The object label corresponding to the point of the effective grasping part
     
-    'view_cloud_label'([view_point_num, ]): The object label corresponding to each point in the point cloud from the camera's perspective
+    'view_cloud'  (ndarray([view_point_num, 3])): Point cloud from the camera's perspective
     
-    'view_cloud_score'([view_point_num, 4, 9]): The ratio of successful grasp in a region around a given point P, which can help learn which position in P is suitable for grasping
+    'view_cloud_color'  (ndarray([view_point_num, 3])): Point cloud' color from the camera's perspective
     
-    'scene_cloud'([scene_point_num, 3]): Complete scene point cloud (excluding table)
+    'view_cloud_label'  (ndarray([view_point_num, ])): The object label corresponding to each point in the point cloud from the camera's perspective
     
-    'scene_cloud_table'([scene_point_num+table_point_num, 3]): Complete scene point cloud (including table)
+    'view_cloud_score'  (ndarray([valid_frame_num, len(LENGTH_SEARCH),GRASP_PER_LENGTH])): The ratio of successful grasp in a region around a given point P, which can help learn which position in P is suitable for grasping
     
-    'valid_index'([valid_grasp_num, ]): The index of the point with the effective grasping
+    'scene_cloud'  (ndarray([scene_point_num, 3])): Complete scene point cloud (excluding table)
     
-    'valid_frame'([valid_grasp_num, 4, 9, 4, 4]): Effective grasping
+    'scene_cloud_table'  (ndarray([scene_point_num+table_point_num, 3])): Complete scene point cloud (including table)
     
-    'select_frame'([valid_grasp_num, 4, 4]): Grasp with the highest score (score = antipodal_score + vertical_score + center_score)
+    'valid_index'  (ndarray([valid_frame_num, ])): The index of the point with the effective grasping
     
-    'select_score'([valid_grasp_num, ]): Max of antipodal_score + vertical_score + center_score
+    'valid_frame'  (ndarray([valid_frame_num, len(LENGTH_SEARCH),GRASP_PER_LENGTH, 4, 4])): Effective grasping
     
-    'select_antipodal_score'([valid_grasp_num, ]): Max of antipodal_score
+    'select_frame'  (ndarray([best_frame_num, 4, 4])): Grasp with the highest score (score = antipodal_score + vertical_score + center_score)
     
-    'select_center_score'([valid_grasp_num, ]): Max of center_score
+    'select_score'  (ndarray([best_frame_num, ])): Max of antipodal_score + vertical_score + center_score
     
-    'select_vertical_score'([valid_grasp_num, ]): Max of vertical_score
+    'select_antipodal_score'  (ndarray([best_frame_num, ])): Max of antipodal_score
     
-    'select_frame_label'([valid_grasp_num, ]): The label of the object corresponding to each frame in select_frame
+    'select_center_score'  (ndarray([best_frame_num, ])): Max of center_score
+    
+    'select_vertical_score'  (ndarray([best_frame_num, ])): Max of vertical_score
+    
+    'select_frame_label'  (ndarray([best_frame_num, ])): The label of the object corresponding to each frame in select_frame
 }
+```
+*note*  
+1.We sample the grasping every certain length and angle for generating grasping.
+we have set LENGTH_SEARCH = [-0.06, -0.04, -0.02, -0.00], THETA_SEARCH = list(range(-90, 90, 20)), THICKNESS_SEARCH = [0]  in code for Local Frame Search.  
+GRASP_PER_LENGTH = len(THETA_SEARCH) * len(THICKNESS_SEARCH)
+
+2.best_frame_num = valid_frame_num - the frame on table
+
+3.frame.shape[-2:-1] = [4,4]:
+```
+[normal[0],principal_curvature[0],minor_curvature[0],-local[0]],  
+[normal[1],principal_curvature[1],minor_curvature[1],-local[1]],  
+[normal[2],principal_curvature[2],minor_curvature[2],-local[2]],  
+[0,        0,                     0,                  1]]
+
 ```
