@@ -128,9 +128,7 @@ corresponding to 9 camera angles.
 }
 ```
 *note*   
-1、To get the object-specific grasps, we sample grasps on each object separately.  
-By sampling different grasp orientations around the approaching vector as well as the grasp depths, we generate a set of grasp candidates on each grasp point.  
-The gripper orientations are sampled every 20 degrees from -90 to 90 degrees(THETA SEARCH), and the grasp depths are taken from the set of -0.06, -0.04, -0.02, -0.00(LENGTH SEARCH),depending on the depth in the gripper parameters.  
+1、To get the object-specific grasps, we sample grasps on each object separately. By sampling different grasp orientations around the approaching vector as well as the grasp depths, we generate a set of grasp candidates on each grasp point. The gripper orientations are sampled every 20 degrees from -90 to 90 degrees(THETA SEARCH), and the grasp depths are taken from the set of -0.06, -0.04, -0.02, -0.00(LENGTH SEARCH), depending on the depth in the gripper parameters.  
 
 2.select_frame: ndarray([best_frame_num, 4, 4]):  
 
