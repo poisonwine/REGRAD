@@ -127,18 +127,18 @@ corresponding to 9 camera angles.
     'select_frame_label'  (ndarray([best_frame_num, ])): The label of the object corresponding to each frame in select_frame
 }
 ```
-*note*  
-1.We sample the grasping every certain length and angle for generating grasping.
-we have set LENGTH_SEARCH = [-0.06, -0.04, -0.02, -0.00], THETA_SEARCH = list(range(-90, 90, 20)), THICKNESS_SEARCH = [0]  in code for Local Frame Search.  
-GRASP_PER_LENGTH = len(THETA_SEARCH) * len(THICKNESS_SEARCH)
+*note*   
+1、To get the object-specific grasps, we sample grasps on each object separately.  
+By sampling different grasp orientations around the approaching vector as well as the grasp depths, we generate a set of grasp candidates on each grasp point.  
+The gripper orientations are sampled every 20 degrees from -90 to 90 degrees(THETA SEARCH), and the grasp depths are taken from the set of -0.06, -0.04, -0.02, -0.00(LENGTH SEARCH),depending on the depth in the gripper parameters.  
 
-2.best_frame_num = valid_frame_num - the frame on table
+2.select_frame: ndarray([best_frame_num, 4, 4]):  
 
-3.frame.shape[-2:-1] = [4,4]:
 ```
-[normal[0],principal_curvature[0],minor_curvature[0],-local[0]],  
-[normal[1],principal_curvature[1],minor_curvature[1],-local[1]],  
-[normal[2],principal_curvature[2],minor_curvature[2],-local[2]],  
-[0,        0,                     0,                  1]]
-
+[
+[normal[0],principal_curvature[0],minor_curvature[0],-center[0],  
+[normal[1],principal_curvature[1],minor_curvature[1],-center[1],  
+[normal[2],principal_curvature[2],minor_curvature[2],-center[2],   
+[0,        0,                     0,                  1]
+]
 ```
