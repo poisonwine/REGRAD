@@ -111,7 +111,7 @@ data = np.load('/your/filepath/00001_view_1.p', allow_pickle=True)
 
 *Selected 3D grasp data* : include only high-quality grasp labels after filtering along with their scores of grasp quality.
 
-**Point Data:**
+- [x] **Point Data:**
 
 ```
 'view_cloud': ndarray([view_point_num, 3]) Snapshot from camera view;
@@ -125,7 +125,7 @@ data = np.load('/your/filepath/00001_view_1.p', allow_pickle=True)
 'scene_cloud_table': ndarray([scene_point_num+table_point_num, 3]) Complete scene point cloud (including table);
 ```
 
-**Raw 3D grasp data:**
+- [x] **Raw 3D grasp data:**
 
 ```
 'valid_frame': ndarray([sampled_point_num, len(LENGTH_SEARCH),len(THETA_SEARCH), 4, 4]) A set of generated grasp candidates on sampled point; each grasp is represented by a rotation matrix (a frame) with a shape of 4x4. Format:
@@ -155,7 +155,7 @@ Note:
 
    *THETA_SEARCH* : the gripper orientations are sampled every 20 degrees from -90 to 90 degrees. Therefore  len(*THETA_SEARCH*)=9.
 
-**Selected 3D grasp data:**
+- [x] **Selected 3D grasp data:**
 
 ```
 
