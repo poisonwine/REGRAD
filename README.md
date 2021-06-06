@@ -79,64 +79,136 @@ train
 - [x] *depth.png*  
 
 
-## Grasp_Part  
-As for grasping, the dataset provides both 2D and 3D grasping data. For each scene, there are 9 data files
-corresponding to 9 camera angles.  
-1. data loading
-```angular2
-    import numpy as np
-    data = np.load(filepath, allow_pickle=True)
-```
-2. data format
-```angular2
-{
-    'antipodal_score'  (ndarray([valid_frame_num, len(LENGTH_SEARCH),GRASP_PER_LENGTH])): The force closure property of a grasp 
-    
-    'vertical_score'  (ndarray([valid_frame_num, len(LENGTH_SEARCH),GRASP_PER_LENGTH])): The verticality between the grasping direction of the gripper and the table (It is more stable to perform grasping perpendicular to the desktop)
-    
-    'center_score'  (ndarray([valid_frame_num, len(LENGTH_SEARCH),GRASP_PER_LENGTH])): The distance between the grasp point and the center point of the object (It is more stable to perform grasping near its center)
-    
-    'objects_label'  (ndarray([valid_frame_num, len(LENGTH_SEARCH),GRASP_PER_LENGTH])): The object label corresponding to the point of the effective grasping part
-    
-    'view_cloud'  (ndarray([view_point_num, 3])): Point cloud from the camera's perspective
-    
-    'view_cloud_color'  (ndarray([view_point_num, 3])): Point cloud' color from the camera's perspective
-    
-    'view_cloud_label'  (ndarray([view_point_num, ])): The object label corresponding to each point in the point cloud from the camera's perspective
-    
-    'view_cloud_score'  (ndarray([valid_frame_num, len(LENGTH_SEARCH),GRASP_PER_LENGTH])): The ratio of successful grasp in a region around a given point P, which can help learn which position in P is suitable for grasping
-    
-    'scene_cloud'  (ndarray([scene_point_num, 3])): Complete scene point cloud (excluding table)
-    
-    'scene_cloud_table'  (ndarray([scene_point_num+table_point_num, 3])): Complete scene point cloud (including table)
-    
-    'valid_index'  (ndarray([valid_frame_num, ])): The index of the point with the effective grasping
-    
-    'valid_frame'  (ndarray([valid_frame_num, len(LENGTH_SEARCH),GRASP_PER_LENGTH, 4, 4])): Effective grasping
-    
-    'select_frame'  (ndarray([best_frame_num, 4, 4])): Grasp with the highest score (score = antipodal_score + vertical_score + center_score)
-    
-    'select_score'  (ndarray([best_frame_num, ])): Max of antipodal_score + vertical_score + center_score
-    
-    'select_antipodal_score'  (ndarray([best_frame_num, ])): Max of antipodal_score
-    
-    'select_center_score'  (ndarray([best_frame_num, ])): Max of center_score
-    
-    'select_vertical_score'  (ndarray([best_frame_num, ])): Max of vertical_score
-    
-    'select_frame_label'  (ndarray([best_frame_num, ])): The label of the object corresponding to each frame in select_frame
-}
-```
-*note*   
-1、To get the object-specific grasps, we sample grasps on each object separately. By sampling different grasp orientations around the approaching vector as well as the grasp depths, we generate a set of grasp candidates on each grasp point. The gripper orientations are sampled every 20 degrees from -90 to 90 degrees(THETA SEARCH), and the grasp depths are taken from the set of -0.06, -0.04, -0.02, -0.00(LENGTH SEARCH), depending on the depth in the gripper parameters.  
+## Grasp Part
+For grasping, REGRAD provides both 2D and 3D grasping data.
 
-2.select_frame: ndarray([best_frame_num, 4, 4]):  
+The directory structure is as follows. We here take *train* folder for example.
+
+### 3D grasp
+```markdown
+train
+|______   scene id
+|__________ *scene-id*_view_*view-id*.p (e.g. 00001_view_1.p)
+```
+
+note:
+
+*view id*: id of the camera pose (from 1 to 9)
+
+#### Details for 3D grasp file
+
+1、To load the 3D grasp data (e.g. *00001\_view\_1.p*), we need to use *numpy* as follows:
+
+```python
+data = np.load('/your/filepath/00001_view_1.p', allow_pickle=True)
+```
+
+2、In order to visualize the generated grasps in scene clearly and train the network to detect the grasps, we store three kinds of data: 
+
+*Point data* : store the point clouds.
+
+*Raw 3D grasp data* : provide the raw grasp data before filtering. Note that it includes both high- and low-quality grasps along with the scores of grasp quality.
+
+*Selected 3D grasp data* : include only high-quality grasp labels after filtering along with their scores of grasp quality.
+
+**Point Data:**
+
+```
+'view_cloud': ndarray([view_point_num, 3]) Snapshot from camera view;
+
+'view_cloud_color': ndarray([view_point_num, 3]) RGB values for each point in ‘view_cloud’;
+
+'view_cloud_label': ndarray([view_point_num, ]) The object label(‘obj_id’) for each point in ‘view_cloud’;
+
+'scene_cloud': ndarray([scene_point_num, 3]) Complete scene point cloud (excluding table);
+
+'scene_cloud_table': ndarray([scene_point_num+table_point_num, 3]) Complete scene point cloud (including table);
+```
+
+**Raw 3D grasp data:**
+
+```
+'valid_frame': ndarray([sampled_point_num, len(LENGTH_SEARCH),len(THETA_SEARCH), 4, 4]) A set of generated grasp candidates on sampled point; each grasp is represented by a rotation matrix (a frame) with a shape of 4x4. Format:
+[[normal[0],principal_curvature[0],minor_curvature[0],-center[0], 
+[normal[1],principal_curvature[1],minor_curvature[1],-center[1], 
+[normal[2],principal_curvature[2],minor_curvature[2],-center[2],  
+[0,    0,           0,         1]]
+
+'valid_index': ndarray([sampled_point_num, ]) The index of the sampled points in ‘view_cloud’;
+
+'antipodal_score': ndarray([sampled_point_num, len(LENGTH_SEARCH),len(THETA_SEARCH)]) The force closure property of a grasp;
+
+'vertical_score': ndarray([sampled_point_num, len(LENGTH_SEARCH),len(THETA_SEARCH)]) The verticality between the grasping direction of the gripper and the table (It is more stable to perform grasping perpendicular to the desktop);
+
+'center_score': ndarray([sampled_point_num, len(LENGTH_SEARCH),len(THETA_SEARCH)]) The distance between the grasp point and the center point of the object (It is more stable to perform grasping near its center);
+
+'objects_label': ndarray([sampled_point_num, len(LENGTH_SEARCH),len(THETA_SEARCH)]): The object label(‘obj_id’) of the sampled grasp points.
+```
+
+Note:
+
+1. *sampled\_point\_num* : since using the full point cloud is inefficient, we firstly down-sample the point cloud to get a subset of points for each scene, based on which we generate the candidate grasps.
+
+2. By sampling different gripper orientations around the approaching vector as well as the gripper depths, we generate a set of grasp candidates on each grasp point.
+
+   *LENGTH_SEARCH* : to sample grasps, the gripper depths are taken from the set of -0.06, -0.04, -0.02, -0.00, therefore len(*LENGTH_SEARCH*)=4.
+
+   *THETA_SEARCH* : the gripper orientations are sampled every 20 degrees from -90 to 90 degrees. Therefore  len(*THETA_SEARCH*)=9.
+
+**Selected 3D grasp data:**
+
+```
+
+'select_frame': ndarray([selected_grasp_num, 4, 4]) the selected high-quality grasps, format 
+[[normal[0],principal_curvature[0],minor_curvature[0],-center[0], 
+[normal[1],principal_curvature[1],minor_curvature[1],-center[1], 
+[normal[2],principal_curvature[2],minor_curvature[2],-center[2],  
+[0,    0,           0,         1]]
+
+'select_score': ndarray([selected_grasp_num, ]) the score of grasp quality corresponding to the selected grasps.
+
+'select_antipodal_score': ndarray([selected_grasp_num, ]) selected antipodal_scores
+
+'select_center_score': ndarray([selected_grasp_num, ]) selected center_scores
+
+'select_vertical_score': ndarray([selected_grasp_num, ]) selected vertical_scores
+
+'select_frame_label': ndarray([selected_grasps_num, ]) The object label(‘obj_id’) of the selected grasp points.
+```
+
+
+### 2D garsp
+
+```markdown
+train
+|___scene_id
+|______ view_id
+|__________*view_id*.json (e.g. 1.json)
+|__________*view_id*.jpg (e.g. 1.jpg)
+```
+
+#### Details for 2D grasp file
+
+We project 3D grasp data (‘select\_frame’) to the image and filter them by ‘select\_vertical\_score’ (>0.5)
+
+1、*view_id*.json contains a list of 2d grasps. Each grasp includes the object label('obj_id'), the rectangular grasp box, and the corresponding grasp scores.
+for example:
 
 ```
 [
-[normal[0],principal_curvature[0],minor_curvature[0],-center[0],  
-[normal[1],principal_curvature[1],minor_curvature[1],-center[1],  
-[normal[2],principal_curvature[2],minor_curvature[2],-center[2],   
-[0,        0,                     0,                  1]
+  # grasp 1
+  [
+    obj_id, 
+    [[center-x, center-y], [width, height], theta], 
+    [select_vertical_score,select_center_score,select_antipodal_score, select_score]
+  ]
+  # grasp 2
+  [
+    obj_id, 
+    [[center-x, center-y], [width, height], theta], 
+    [select_vertical_score,select_center_score,select_antipodal_score, select_score]
+  ]
+...
 ]
 ```
+2、*view_id*.jpg contains the visualized 2D grasps.
