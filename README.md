@@ -205,7 +205,7 @@ train
 
 #### Details for 2D grasp file
 
-We project 3D grasp data (‘select\_frame’) to the image and filter them by ‘select\_vertical\_score’ (>0.5)
+We project 3D grasp data (‘select\_frame’) to the image and filter them by ‘select\_vertical\_score’ (>0.5). But we cannot guarantee that there are graps which can be mapped into image in every scene, some files are possibly missing.
 
 1、*view_id*.json contains a list of 2d grasps. Each grasp includes the object label('obj_id'), the rectangular grasp box, and the corresponding grasp scores.
 for example:
