@@ -4,7 +4,23 @@
 This is a detailed decription of REGRAD Dataset.  
 The Dataset can be divided into two parts, *Relation Part*  and  *Grasp Part*. Each part contains five folder, 
 *train/test/seen_valid/unseen_valid/seen_test*. For every folder, the data format is the same.  
-![dataset_split](dataset_split.png) 
+![dataset_split](dataset_split.png)  
+The directory structure of REGRAD dataset is as follows. For detailed information, please read *Relation Part* and *Grasp part* .  
+
+```
+REGRAD
+|_____ Relation Part
+|__________ train
+|__________ test
+|...........(seen_valid/seen_test/unseen_valid)
+|_____ Grasp Part
+|__________ 3D_Grasp
+|________________ train
+|.................(seen_valid/seen_test/unseen_valid)
+|__________ 2D_Grasp
+|________________ train
+|.................(seen_valid/seen_test/unseen_valid)
+```
 
 ## Relation Part
 The directory structure is as follows. Take *train* folder for example.  
