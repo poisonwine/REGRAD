@@ -1,7 +1,8 @@
-#Relation generation and Image rendering
+# Relation generation and Image rendering
+This is code for relationship generation and image rendering.
+## Relation generation 
 
-## Relation generate 
-###Environment
+### Environment
 
 ubuntu==18.04
 
