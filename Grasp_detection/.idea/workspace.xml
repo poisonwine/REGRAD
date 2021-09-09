@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9fa04a30-b1d9-44be-ae01-bf424abbd99c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="JupyterTrust" id="57cc0d0b-47ee-40e2-a46b-a995fe973211" />
+  <component name="ProjectId" id="1jPs1nZmTrjZ9IRhc9MI3bn0YI9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager" selected="Python.rectangle_generation">
+    <configuration name="eval_data_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="grasp_detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/eval_data_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="generate_eval_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="grasp_detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_eval_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rectangle_generation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="grasp_detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rectangle_generation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="torch_scene_point_cloud" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="grasp_detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/eval" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/eval/torch_scene_point_cloud.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="visualization_utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="grasp_detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/configs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/configs/visualization_utils.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.rectangle_generation" />
+        <item itemvalue="Python.visualization_utils" />
+        <item itemvalue="Python.torch_scene_point_cloud" />
+        <item itemvalue="Python.eval_data_test" />
+        <item itemvalue="Python.generate_eval_data" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9fa04a30-b1d9-44be-ae01-bf424abbd99c" name="Default Changelist" comment="" />
+      <created>1603716848545</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603716848545</updated>
+      <workItem from="1603716871849" duration="51000" />
+      <workItem from="1603717020955" duration="7866000" />
+      <workItem from="1603761688715" duration="33520000" />
+      <workItem from="1603867854186" duration="9155000" />
+      <workItem from="1603883160935" duration="12760000" />
+      <workItem from="1604278037125" duration="11108000" />
+      <workItem from="1604370630390" duration="17864000" />
+      <workItem from="1604410954693" duration="10335000" />
+      <workItem from="1604901707335" duration="4799000" />
+      <workItem from="1604906894345" duration="53283000" />
+      <workItem from="1605148364031" duration="9301000" />
+      <workItem from="1605233323397" duration="551000" />
+      <workItem from="1605234842999" duration="1823000" />
+      <workItem from="1605344007792" duration="3472000" />
+      <workItem from="1605492529203" duration="8404000" />
+      <workItem from="1606134409852" duration="720000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="506" height="438" key="DebuggerActiveHint" timestamp="1605235374168">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="506" height="438" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1605235374168" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1605498897532">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1605498897532" />
+    <state width="1237" height="211" key="GridCell.Tab.0.bottom" timestamp="1605527537107">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="211" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605527537107" />
+    <state width="1237" height="211" key="GridCell.Tab.0.center" timestamp="1605527537107">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="211" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605527537107" />
+    <state width="1237" height="211" key="GridCell.Tab.0.left" timestamp="1605527537107">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="211" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605527537107" />
+    <state width="1237" height="211" key="GridCell.Tab.0.right" timestamp="1605527537107">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="211" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605527537107" />
+    <state width="1237" height="211" key="GridCell.Tab.1.bottom" timestamp="1605527537107">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="211" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605527537107" />
+    <state width="1237" height="211" key="GridCell.Tab.1.center" timestamp="1605527537107">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="211" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1605527537107" />
+    <state width="1237" height="211" key="GridCell.Tab.1.left" timestamp="1605527537107">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="211" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1605527537107" />
+    <state width="1237" height="211" key="GridCell.Tab.1.right" timestamp="1605527537107">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="211" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1605527537107" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test.py</url>
+          <line>83</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/eval_data_test.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/eval/torch_scene_point_cloud.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="opengl_depth.min" language="Python" />
+        <watch expression="__exception__" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/grasp_detection$obj_npy_file_change.coverage" NAME="obj_npy_file_change Coverage Results" MODIFIED="1603767680875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/grasp_detection$projection_com.coverage" NAME="projection_com Coverage Results" MODIFIED="1604281741630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/grasp_detection$rectangle_generation.coverage" NAME="rectangle_generation Coverage Results" MODIFIED="1605498083094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/grasp_detection$visualization_utils.coverage" NAME="visualization_utils Coverage Results" MODIFIED="1605494042834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/configs" />
+    <SUITE FILE_PATH="coverage/grasp_detection$generate_eval_data.coverage" NAME="generate_eval_data Coverage Results" MODIFIED="1605062351117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/grasp_detection$test.coverage" NAME="test Coverage Results" MODIFIED="1604905196481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/grasp_detection$evaluation_data_generator.coverage" NAME="evaluation_data_generator Coverage Results" MODIFIED="1604408352960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eval" />
+    <SUITE FILE_PATH="coverage/grasp_detection$eval_data_test.coverage" NAME="eval_data_test Coverage Results" MODIFIED="1605161726670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/grasp_detection$torch_scene_point_cloud.coverage" NAME="torch_scene_point_cloud Coverage Results" MODIFIED="1605345834130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eval" />
+  </component>
+</project>
