@@ -1,5 +1,5 @@
 # REGRAD Dataset
-Part of our dataset is available: https://stuxjtueducn-my.sharepoint.com/:f:/g/personal/chaser123_stu_xjtu_edu_cn/EgT94GMlqmtHgShSnn_vxPoBMlq56mjTOkNJ-AnaXPPyrA?e=XlA8LD
+We have released part of our dataset, you can download it through [Part_REGRAD](https://stuxjtueducn-my.sharepoint.com/:f:/g/personal/chaser123_stu_xjtu_edu_cn/EgT94GMlqmtHgShSnn_vxPoBMlq56mjTOkNJ-AnaXPPyrA?e=XlA8LD).
 
 ![REGRAD](REGRAD.png)  
 This is a detailed decription of REGRAD Dataset.  
