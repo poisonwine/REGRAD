@@ -39,7 +39,7 @@ REGRAD includes two parts, **Relation Part**  and  **Grasp Part**. Each part con
 
 | train | seen_valid | unseen_valid | seen_test | unseen_test |
 | -------------| ------------- | ------------- | ------------- | ------------- |
-| 47, 000 | 16, 000 | 16, 000 | 16, 000 | 16, 000 |
+| 47k | 16k | 16k | 16k | 16k |
 
 We also provide the detailed category information of each split, showing the list of available categories in different splits:
 
