@@ -134,7 +134,7 @@ split_name (e.g. train)
 | :-----------:| :-----------: | :-----------: | :-----------: |
 | Pixel Value | 255 | 0 | i |
 
-- [x] *mrts.json* is a dict containing all manipulation relationship graphs. The graph of each scene is indexed by the *scene_id*. For example, you could get the scene graph by:
+- [x] *mrts.json* is a dict containing all manipulation relationship graphs. The graph of each scene, i.e., the parent lists of all models, is indexed by the *scene_id*. For example, you could get the scene graph by:
 ```python
 import json
 mrts = json.load(open('mrts.json'))
