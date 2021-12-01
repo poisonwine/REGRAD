@@ -38,7 +38,7 @@ REGRAD includes two parts, **Relation Part**  and  **Grasp Part**. Each part con
 *train / seen\_valid / unseen\_valid / seen\_test / unseen\_test*. Currently, our dataset contains 111.8k different scenes, and the numbers of different scenes in different splits:
 
 | train | seen_valid | unseen_valid | seen_test | unseen_test |
-| :----:| :----: | :----: | :----: | :----: | :----: |
+| -------------| ------------- | ------------- | ------------- | ------------- |
 | 47, 000 | 16, 000 | 16, 000 | 16, 000 | 16, 000 |
 
 We also provide the detailed category information of each split, showing the list of available categories in different splits:
