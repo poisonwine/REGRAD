@@ -1,34 +1,82 @@
 # REGRAD Dataset
-⭐NEW[2021/12/1] Dataset update [REGRAD_v2](https://stuxjtueducn-my.sharepoint.com/:f:/g/personal/chaser123_stu_xjtu_edu_cn/EobRgIWiXmFJlO0k0U980XIBEwU9G7hvrSYxT3eVofpIgw?e=zKO0lA): we provide more reliable relationship labeling and simplified dataset for more convenient training.
 
-[2021/9] We have released part of our dataset, you can download it through [REGRAD_v1](https://stuxjtueducn-my.sharepoint.com/:f:/g/personal/chaser123_stu_xjtu_edu_cn/EgT94GMlqmtHgShSnn_vxPoBMlq56mjTOkNJ-AnaXPPyrA?e=XlA8LD).
+## Download
+⭐ [2021/12/1] We update REGRAD to [REGRAD V2](https://stuxjtueducn-my.sharepoint.com/:f:/g/personal/chaser123_stu_xjtu_edu_cn/EobRgIWiXmFJlO0k0U980XIBEwU9G7hvrSYxT3eVofpIgw?e=zKO0lA):
 
-![REGRAD](REGRAD.png)  
-This is a detailed decription of REGRAD Dataset.  
-The Dataset can be divided into two parts, *Relation Part*  and  *Grasp Part*. Each part contains five folder, 
-*train/test/seen_valid/unseen_valid/seen_test*. For every folder, the data format is the same.  
-![dataset_split](dataset_split.png)  
-The directory structure of REGRAD dataset is as follows. For detailed information, please read *Relation Part* and *Grasp part* .  
+* We optimized the labels of manipulation relations.
+* We optimized the storage of the dataset so that the complete REGRAD will be possible to be accessed online.
+* We re-organized the file tree, which is currently easier to use.
+
+We also keep the old version of REGRAD available, which can be accessed in following link.
+
+[2021/9] We have released part of our dataset, and you can download it at: [REGRAD_v1](https://stuxjtueducn-my.sharepoint.com/:f:/g/personal/chaser123_stu_xjtu_edu_cn/EgT94GMlqmtHgShSnn_vxPoBMlq56mjTOkNJ-AnaXPPyrA?e=XlA8LD).
+
+## Introduction
+
+This is the official repo for RElational GRAsps Dataset (REGRAD), a novel, large-scale, and automatically-generated dataset by considering the relationships among objects and grasps.
+REGRAD has the following features:
+
+* **More objects and categories**. Our dataset is built upon
+the well-known ShapeNet dataset [10], [11], including
+55 categories and 50K different object models.
+* **Different kinds of modalities** including the depth im- ages and point clouds, which are helpful for relationship detection, grasp synthesis, and sim-to-real transferring.
+* **Rich labels** including:
+    * 6D pose of each object.
+    * Bounding boxes and segmentations on 2D images.
+    * Point cloud segmentations.
+    * Manipulation Relationship Graph (MRG) indicating the grasping order.
+    * Collision-free and stable 6D grasps of each object.
+    * Rectangular 2D grasps.
+* **Segregated training, validation, and test sets** including the unseen validation set and unseen test set, in which the objects belong to unknown categories.
+* **Multi-view data** which releases the assumption of single-view perception since in practice the robot could move around for more precise manipulation.
+* **Automatic data generation** in the physical simulator which will save much time to label the dataset and avoid the bias from the human labels. Currently, to add new objects to the datasets, we only need to scan the 3D models instead of re-collecting and labeling images.
+
+## Splits
+
+REGRAD includes two parts, **Relation Part**  and  **Grasp Part**. Each part contains five folders, 
+*train / seen\_valid / unseen\_valid / seen\_test / unseen\_test*. Currently, our dataset contains 111.8k different scenes, and the numbers of different scenes in different splits:
+
+| train | seen_valid | unseen_valid | seen_test | unseen_test |
+| :----:| :----: | :----: | :----: | :----: | :----: |
+| 47, 000 | 16, 000 | 16, 000 | 16, 000 | 16, 000 |
+
+We also provide the detailed category information of each split, showing the list of available categories in different splits:
+
+![dataset_split](dataset_split.png)
+
+## Examples  
+
+![REGRAD](REGRAD.png)
+
+## File Tree
+###Root directory
 
 ```
 REGRAD
 |_____ Relation Part
 |__________ train
+|__________ seen_valid
+|__________ seen_test
+|__________ unseen_valid
 |__________ test
-|...........(seen_valid/seen_test/unseen_valid)
 |_____ Grasp Part
 |__________ 3D_Grasp
-|________________ train
-|.................(seen_valid/seen_test/unseen_valid)
-|__________ 2D_Grasp
-|________________ train
-|.................(seen_valid/seen_test/unseen_valid)
+|_______________ train
+|_______________ seen_valid
+|_______________ seen_test
+|_______________ unseen_valid
+|_______________ test
+|__________ 3D_Grasp
+|_______________ train
+|_______________ seen_valid
+|_______________ seen_test
+|_______________ unseen_valid
+|_______________ test
 ```
 
-## Relation Part
-The directory structure is as follows. Take *train* folder for example.  
+### Relation  Part
 ```
-train  
+split_name (e.g. train)
 |_____ scene id  
 |__________ id of different camera angles(from 1 to 9)
 |________________ camera_info.json
@@ -41,14 +89,37 @@ train
 |__________ final_state.json
 |__________ mrt.json
 ```
-### Some detailed description
+
+### Grasp Part
+
+#### 3D_Grasp
+```markdown
+split_name (e.g. train)
+|______ scene id
+|__________ *scene-id*_view_*view-id*.p (e.g. 00001_view_1.p)
+```
+NOTE:
+*view id* is the id of the camera pose (from 1 to 9).
+
+#### 2D_Grasp
+```markdown
+split_name (e.g. train)
+|___scene_id
+|______ view_id
+|__________*view_id*.json (e.g. 1.json)
+|__________*view_id*.jpg (e.g. 1.jpg)
+```
+
+## Relation Data Format
 
 - [x] *final_state.json*  
     contains the  generated scene information including *model name*、*obj_id*、*path*、*position*. This file is necessary to
     reload the scene in relation detection.
     ```angular2
     { 'name': model_name-obj_id (e.g. tower-1),
+    
       'path': model category/model path (e.g. 04460130/de08da18d316f927a72fcffccc240663),
+      
       'pos': xyz postion + quaternion,
   }
     ```
@@ -98,23 +169,11 @@ train
 - [x] *depth.png*  
 
 
-## Grasp Part
-For grasping, REGRAD provides both 2D and 3D grasping data.
+## Grasp Data Format
 
-The directory structure is as follows. We here take *train* folder for example.
+For grasping, REGRAD provides both 2D and 3D labels.
 
 ### 3D grasp
-```markdown
-train
-|______   scene id
-|__________ *scene-id*_view_*view-id*.p (e.g. 00001_view_1.p)
-```
-
-note:
-
-*view id*: id of the camera pose (from 1 to 9)
-
-#### Details for 3D grasp file
 
 1、To load the 3D grasp data (e.g. *00001\_view\_1.p*), we need to use *numpy* as follows:
 
@@ -198,17 +257,7 @@ Note:
 
 ### 2D garsp
 
-```markdown
-train
-|___scene_id
-|______ view_id
-|__________*view_id*.json (e.g. 1.json)
-|__________*view_id*.jpg (e.g. 1.jpg)
-```
-
-#### Details for 2D grasp file
-
-We project 3D grasp data (‘select\_frame’) to the image and filter them by ‘select\_vertical\_score’ (>0.5). But we cannot guarantee that there are graps which can be mapped into image in every scene, some files are possibly missing.
+We project 3D grasp data (‘select\_frame’) to the image and filter them by ‘select\_vertical\_score’ with the threshold 0.5. But we cannot guarantee that there are always grasps in every 2D image. Therefore, some files are possibly missing.
 
 1、*view_id*.json contains a list of 2d grasps. Each grasp includes the object label('obj_id'), the rectangular grasp box, and the corresponding grasp scores.
 for example:
