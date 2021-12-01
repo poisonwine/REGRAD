@@ -18,7 +18,7 @@ This is the official repo for RElational GRAsps Dataset (REGRAD), a novel, large
 REGRAD has the following features:
 
 * **More objects and categories**. Our dataset is built upon
-the well-known ShapeNet dataset [10], [11], including
+the well-known ShapeNet dataset, including
 55 categories and 50K different object models.
 * **Different kinds of modalities** including the depth im- ages and point clouds, which are helpful for relationship detection, grasp synthesis, and sim-to-real transferring.
 * **Rich labels** including:
