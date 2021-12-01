@@ -50,7 +50,7 @@ We also provide the detailed category information of each split, showing the lis
 ![REGRAD](REGRAD.png)
 
 ## File Tree
-###Root directory
+### Root directory
 
 ```
 REGRAD
