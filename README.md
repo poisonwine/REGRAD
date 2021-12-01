@@ -67,7 +67,7 @@ REGRAD
 |_______________ seen_test
 |_______________ unseen_valid
 |_______________ test
-|__________ 3D_Grasp
+|__________ 2D_Grasp
 |_______________ train
 |_______________ seen_valid
 |_______________ seen_test
@@ -75,7 +75,18 @@ REGRAD
 |_______________ test
 ```
 
-### Relation  Part
+### Relation Part V2
+```
+split_name (e.g. train)
+|_____ RGBImages
+|_____ DepthImages
+|_____ SegmentationImages
+|_____ mrts.json
+|_____ objects.json
+```
+
+
+### Relation Part
 ```
 split_name (e.g. train)
 |_____ scene id  
@@ -109,6 +120,61 @@ split_name (e.g. train)
 |______ view_id
 |__________*view_id*.json (e.g. 1.json)
 |__________*view_id*.jpg (e.g. 1.jpg)
+```
+
+## Relation Data Format V2
+
+- [x] *RGBImages* Contains all RGB images from all scenes, named by *(scene\_id)\_(view_id).jpg*
+
+- [x] *DepthImages* Contains all depth images from all scenes, named by *(scene\_id)\_(view_id).png*. Unit: mm.
+
+- [x] *SegmentationImages* Contains all segments of all scenes, named by *(scene\_id)\_(view_id).png*, where the pixel values represent the object ids:
+
+|  | Table | Background | Object with id *i* |
+| :-----------:| :-----------: | :-----------: | :-----------: |
+| Pixel Value | 255 | 0 | i |
+
+- [x] *mrts.json* is a dict containing all manipulation relationship graphs. The graph of each scene is indexed by the *scene_id*. For example, you could get the scene graph by:
+```python
+import json
+mrts = json.load(open('mrts.json'))
+mrt_scene_1 = mrts['00001']
+```
+It will return a mrt like this:
+```angular2
+{"table-1": ['birdhouse-2','mug-4'], "birdhouse-2": [], "vessel-3": ['mug-4'], "mug-4": [] } 
+```
+
+- [x] *objects.json* is a dict containing all other object-specific labels. The labels of a specific view *j* from scene *i* could be read by:
+```python
+import json
+labels = json.load(open('objects.json'))
+label_00001_1 = mrts['00001']['1']
+```
+It will return all labels from this view, i.e., a list with each element representing the label of one object. The label for each object would look like the following:
+```angular2
+{ 'model_name':(str) ShapeNet model name(e.g. tower),
+  
+      'category':(str) ShapeNet category(e.g. 04460130),
+  
+      'model_id':(str) ShapeNet model id(e.g. de08da18d316f927a72fcffccc240663),
+  
+      'obj_id': (int) id in the scene(e.g. 1),
+  
+      '6D_pose':(7-d list of float) 6D_pose of models, format [x,y,z, quaternion],
+  
+      'parent_list':(list) parent obj_id list, format ['model_name-obj_id1','model_name-obj_id2'],
+  
+      'scale':(3-d list) model scale factor in the scene, format [x_scale, y_scale, z_scale],
+  
+      'bbox':(4-d list) bounding box of the model, format [x1, y1, x2, y2],
+  
+      'MinAreaRect':(4-d list) The smallest bounding rectangle of the model, format [[x1,y1],[x2,y2],[x3,y3],[x4,y4]],
+  
+      'segmentation':(2-d list) segmentation region in the segment.jpg picture, format [x_position_list, y_position_list],
+  
+      'Source': (str) ShapeNetCore.v2,
+  }
 ```
 
 ## Relation Data Format
