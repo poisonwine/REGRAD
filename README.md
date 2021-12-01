@@ -61,7 +61,7 @@ REGRAD
 |__________ unseen_valid
 |__________ test
 |_____ Grasp Part
-|__________ 3D_Grasp
+|__________ 2D_Grasp
 |_______________ train
 |_______________ seen_valid
 |_______________ seen_test
