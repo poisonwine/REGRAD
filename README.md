@@ -1,5 +1,7 @@
 # REGRAD Dataset
-We have released part of our dataset, you can download it through [Part_REGRAD](https://stuxjtueducn-my.sharepoint.com/:f:/g/personal/chaser123_stu_xjtu_edu_cn/EgT94GMlqmtHgShSnn_vxPoBMlq56mjTOkNJ-AnaXPPyrA?e=XlA8LD).
+⭐NEW[2021/12/1] Dataset update [REGRAD_v2](https://stuxjtueducn-my.sharepoint.com/:f:/g/personal/chaser123_stu_xjtu_edu_cn/EobRgIWiXmFJlO0k0U980XIBEwU9G7hvrSYxT3eVofpIgw?e=zKO0lA): we provide more reliable relationship labeling and simplified dataset for more convenient training.
+
+[2021/9] We have released part of our dataset, you can download it through [REGRAD_v1](https://stuxjtueducn-my.sharepoint.com/:f:/g/personal/chaser123_stu_xjtu_edu_cn/EgT94GMlqmtHgShSnn_vxPoBMlq56mjTOkNJ-AnaXPPyrA?e=XlA8LD).
 
 ![REGRAD](REGRAD.png)  
 This is a detailed decription of REGRAD Dataset.  
