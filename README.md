@@ -1,12 +1,15 @@
 # REGRAD Dataset
 
 ## Download
+⭐ [2022/3/26] We update REGRAD to REGRAD_V3:
+* The full version of REGRAD. It can be downloaded through [Baidu disk](https://pan.baidu.com/s/1qeWsS1GaZ74wjsTKNF3N3A), access code: xjtu
+
 ⭐ [2021/12/1] We update REGRAD to [REGRAD V2](https://stuxjtueducn-my.sharepoint.com/:f:/g/personal/chaser123_stu_xjtu_edu_cn/EobRgIWiXmFJlO0k0U980XIBEwU9G7hvrSYxT3eVofpIgw?e=zKO0lA):
 
 * We optimized the labels of manipulation relations.
 * We optimized the storage of the dataset so that the complete REGRAD will be possible to be accessed online.
 * We re-organized the file tree, which is currently easier to use.
-* For grasp data, please refer to [REGRAD_v1](https://stuxjtueducn-my.sharepoint.com/:f:/g/personal/chaser123_stu_xjtu_edu_cn/EgT94GMlqmtHgShSnn_vxPoBMlq56mjTOkNJ-AnaXPPyrA?e=XlA8LD).
+* For grasp data, please refer to [REGRAD_V1](https://stuxjtueducn-my.sharepoint.com/:f:/g/personal/chaser123_stu_xjtu_edu_cn/EgT94GMlqmtHgShSnn_vxPoBMlq56mjTOkNJ-AnaXPPyrA?e=XlA8LD).
 
 We also keep the old version of REGRAD available, which can be accessed in following link.
 
