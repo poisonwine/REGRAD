@@ -1,8 +1,7 @@
 # REGRAD Dataset
 
 ## Download
-⭐ [2022/3/26] We update REGRAD to REGRAD_V3:
-* The full version of REGRAD. It can be downloaded through [Baidu disk](https://pan.baidu.com/s/1qeWsS1GaZ74wjsTKNF3N3A), access code: xjtu
+⭐ [2022/3/26] The full version of REGRAD can be downloaded through [Baidu disk](https://pan.baidu.com/s/1qeWsS1GaZ74wjsTKNF3N3A), access code: xjtu
 
 ⭐ [2021/12/1] We update REGRAD to [REGRAD V2](https://stuxjtueducn-my.sharepoint.com/:f:/g/personal/chaser123_stu_xjtu_edu_cn/EobRgIWiXmFJlO0k0U980XIBEwU9G7hvrSYxT3eVofpIgw?e=zKO0lA):
 
